@@ -1,0 +1,2 @@
+*{box-sizing:border-box;margin:0;padding:0}.header{background-color:#f0f0f0;justify-content:space-between;align-items:center;margin:10px;padding:10px;display:flex}.nav-items{float:right;display:flex}.nav-items>ul{margin:0;padding:0;list-style-type:none;display:flex}.nav-items>ul>li{cursor:pointer;padding:10px 20px}.nav-items>ul>li:hover{background-color:#ddd;border-radius:5px}.nav-items>ul>li.active{background-color:#ccc;border-radius:5px;font-weight:700}.logo{color:#ccc;font-size:1.5em;font-weight:700}
+/*# sourceMappingURL=index.5520dfa5.css.map */

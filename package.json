@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.7",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "name": "namsteashish",
+  "version": "1.0.0",
+  "description": "foodstore",
+  
+  "scripts": {
+    "start":"parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/108Ashish/food-app.git"
+  },
+  "author": "ashish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/108Ashish/food-app/issues"
+  },
+  "homepage": "https://github.com/108Ashish/food-app#readme"
+}
