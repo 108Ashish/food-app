@@ -3113,7 +3113,6 @@ const RestaurantCard = ({ name, cusines, image, rating })=>{
     }, undefined);
 };
 _c2 = RestaurantCard;
-// Sample list of restaurants
 const restaurantList = [
     {
         data: {
@@ -3159,43 +3158,43 @@ const restaurantList = [
                 "Pizza",
                 "Italian"
             ],
-            image: "https://b.zmtcdn.com/data/pictures/chains/5/7400255/9275c1f43f9d6f7741ebfd7fbb465edb.jpg?fit=around|960:500&crop=960:500;*,*",
+            image: "https://www.dominos.co.in/store-location/img/vegpizza.jpg",
             rating: 4.3
         }
     },
     {
         data: {
-            id: 4,
+            id: 5,
             name: "Starbucks",
             cusines: [
                 "Coffee",
                 "Cafe"
             ],
-            image: "https://b.zmtcdn.com/data/pictures/chains/7/3400707/7d56a6a8f3acddf313f6be7d57e90840.jpg?fit=around|960:500&crop=960:500;*,*",
+            image: "https://starbucksstatic.cognizantorderserv.com/Items/Large/webP/112573.webp",
             rating: 4.5
         }
     },
     {
         data: {
-            id: 5,
+            id: 6,
             name: "KFC",
             cusines: [
                 "Chicken",
                 "Fast Food"
             ],
-            image: "https://b.zmtcdn.com/data/pictures/chains/3/53003/f79b4a472e243d57fe073146c9e26b11.jpg?fit=around|960:500&crop=960:500;*,*",
+            image: "https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002169.jpg?ver=52.96",
             rating: 4.0
         }
     },
     {
         data: {
-            id: 6,
+            id: 7,
             name: "McDonald's",
             cusines: [
                 "Burger",
                 "Fast Food"
             ],
-            image: "https://b.zmtcdn.com/data/pictures/chains/1/1201/982db362efcbecff30cb1bde00da051b.jpg?fit=around|960:500&crop=960:500;*,*",
+            image: "https://s7d1.scene7.com/is/image/mcdonalds/1PUB_DigitalExperience_McDelivery:1-column-desktop?resmode=sharp2",
             rating: 4.2
         }
     }
@@ -3204,7 +3203,6 @@ const restaurantList = [
 function filterData(searchTxt, restaurants) {
     return restaurants.filter((restaurant)=>restaurant.data.name.toLowerCase().includes(searchTxt.toLowerCase()));
 }
-// Body Component
 const Body = ()=>{
     _s();
     const [searchTxt, setSearchTxt] = (0, _reactDefault.default).useState(""); // State for search input
