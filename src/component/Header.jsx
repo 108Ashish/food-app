@@ -14,7 +14,7 @@ export const Title = () => (
 // Header component
 export const HeaderComponent = () => {
   // Using camelCase for setter function name
-  const [title, setTitle] = React.useState("Food Villa");
+  const [title, setTitle] = React.useState("Food");
 
   return (
     <div className="header">
