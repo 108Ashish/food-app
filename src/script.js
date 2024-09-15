@@ -28,9 +28,11 @@ what is usestate?
 
 */
  
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { HeaderComponent, Title } from "./component/Header.jsx"; // Ensure this path is correct
+import { HeaderComponent, Title } from "./component/Header.jsx";
+// import {Api} from "./component/api.jsx";
+ // Ensure this path is correct
 // const Title = () => (
 //   <a href="/">
 //     <img
@@ -150,18 +152,32 @@ const restaurantList = [
     },
   },
   
+  
 ];
-// Function to filter restaurants by name
+
 function filterData(searchTxt, restaurants) {
   return restaurants.filter((restaurant) =>
     restaurant.data.name.toLowerCase().includes(searchTxt.toLowerCase())
   );
 }
 
-
 const Body = () => {
-  const [searchTxt, setSearchTxt] = React.useState(""); // State for search input
-  const [restaurants, setRestaurants] = React.useState(restaurantList); // State for restaurant list
+  const [searchTxt, setSearchTxt] = React.useState("");
+  const [restaurants, setRestaurants] = React.useState(restaurantList);
+
+  React.useEffect(() => {
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants() {
+    try {
+      const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.71700&lng=75.83370&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const json = await response.json();
+      setRestaurants(json?.data?.cards[2]?.data?.data?.cards || []);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
 
   return (
     <>
@@ -171,23 +187,10 @@ const Body = () => {
           className="search-bar"
           placeholder="Search"
           value={searchTxt}
-          onChange={(e) => {   
-            setSearchTxt(e.target.value);
-          }}
+          onChange={(e) => setSearchTxt(e.target.value)}
         />
         <button
           className="search-btn"
- /* onClick={()=>{ 
-    //   if(searchclicked === true){
-    //     setsearchclicked("false");
-
-    //   }
-    //   else {
-    //   setsearchclicked("true")
-    //   }
-    }}*/ 
-
-
           onClick={() => {
             const data = filterData(searchTxt, restaurantList);
             setRestaurants(data);
@@ -212,6 +215,11 @@ const Body = () => {
 
 const Footer = () => {
   return <h4>Footer - Links | Copyright</h4>;
+};
+
+// Placeholder HeaderComponent
+const HeaderComponent = () => {
+  return <header><h1>Restaurant Finder</h1></header>;
 };
 
 const AppLayout = () => {
