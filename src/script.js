@@ -165,21 +165,26 @@ const Body = () => {
   const [searchTxt, setSearchTxt] = React.useState("");
   const [restaurants, setRestaurants] = React.useState(restaurantList);
 
-  // React.useEffect(() => {
-  //   getRestaurants();
-  // }, []);
+   React.useEffect(() => {
+    getRestaurants();
+  }, []);
 
-  // async function getRestaurants() {
-  //   try {
-  //     const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.71700&lng=75.83370&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-  //     const json = await response.json();
-  //     setRestaurants(json?.data?.cards[2]?.data?.data?.cards || []);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // }
+  async function getRestaurants() {
+    try {
+      const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.71700&lng=75.83370&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const json = await response.json();
+      setRestaurants(json?.data?.cards[2]?.data?.data?.cards || []);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
 
   return (
+
+//hello there
+
+
+
     <>
       <div className="search-container">
         <input
